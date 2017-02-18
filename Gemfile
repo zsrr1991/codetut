@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 gem 'bcrypt', '~> 3.1.7'
 gem 'config'
+gem 'recaptcha', require: 'recaptcha/rails'
 
 
 
@@ -43,7 +44,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_girl_rails', require: false
   gem 'sqlite3'
-  gem 'recaptcha', require: 'recaptcha/rails'
+
   
 end
 
