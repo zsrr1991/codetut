@@ -32,6 +32,11 @@
 				<%=	f.password_field :password_confirmation, class: 'form-control',	placeholder: 'Wpisz ponownie hasło'	%>
 				<%= error_message_for(f.object, :password_confirmation) %>
 			</div>
+			
+			<div class="form-group">
+				<%= recaptcha_tags %>
+			</div>
+
 
 			<div class="actions">
 				<%= f.submit 'Zarejestruj się', class: 'btn btn-primary' %>
