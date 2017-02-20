@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only:[:show, :edit, :update, :destroy] 
+ include AuthenticationHelper
   
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :login_required, except: [:index, :show]
   def index
   	@photos = Photo.all
   end
@@ -14,6 +16,7 @@ class PhotosController < ApplicationController
 
   def create
 	@photo = Photo.new(photo_params)
+  @photo.user = current_user
 		if @photo.save
       flash[:success] = "Zdjęcie zostało dodane !"
 			redirect_to @photo

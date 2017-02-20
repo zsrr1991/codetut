@@ -7,5 +7,10 @@
 	<%= @photo.description %>
 </p>
 <p>
+	<strong>Dodane przez:</strong>
+	<%= @photo.user.full_name %>
+</p>
+
+<p>
 	<%= image_tag @photo.image_url, height: 400 %>
 </p>
